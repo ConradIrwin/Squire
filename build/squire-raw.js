@@ -4405,6 +4405,8 @@ Squire.rangeDoesStartAtBlockBoundary = rangeDoesStartAtBlockBoundary;
 Squire.rangeDoesEndAtBlockBoundary = rangeDoesEndAtBlockBoundary;
 Squire.expandRangeToBlockBoundaries = expandRangeToBlockBoundaries;
 
+Squire.onPaste = onPaste;
+
 if ( typeof exports === 'object' ) {
     module.exports = Squire;
 } else if ( typeof define === 'function' && define.amd ) {
