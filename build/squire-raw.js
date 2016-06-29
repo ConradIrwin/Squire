@@ -3795,7 +3795,9 @@ var decreaseListLevel = function ( frag ) {
         // e.g. `ul > ul > li` becomes `ul > li`
         if ( /^[OU]L$/.test( newParent.nodeName ) ) {
             newParent.insertBefore(item, parent);
-            newParent.removeChild(parent);
+            if (!parent.firstChild) {
+              newParent.removeChild(parent);
+            }
         } else {
             while ( node ) {
                 next = node.nextSibling;
