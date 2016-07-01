@@ -1,5 +1,9 @@
 /*jshint ignore:start */
 
+Squire.addLinks = addLinks;
+Squire.splitBlock = splitBlock;
+Squire.startSelectionId = startSelectionId;
+Squire.endSelectionId = endSelectionId;
 Squire.getNodeBefore = getNodeBefore;
 Squire.getNodeAfter = getNodeAfter;
 Squire.insertNodeInRange = insertNodeInRange;
