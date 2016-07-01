@@ -4395,6 +4395,10 @@ proto.removeList = command( 'modifyBlocks', removeList );
 proto.increaseListLevel = command( 'modifyBlocks', increaseListLevel );
 proto.decreaseListLevel = command( 'modifyBlocks', decreaseListLevel );
 
+Squire.addLinks = addLinks;
+Squire.splitBlock = splitBlock;
+Squire.startSelectionId = startSelectionId;
+Squire.endSelectionId = endSelectionId;
 Squire.getNodeBefore = getNodeBefore;
 Squire.getNodeAfter = getNodeAfter;
 Squire.insertNodeInRange = insertNodeInRange;
