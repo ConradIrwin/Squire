@@ -242,6 +242,13 @@ var keyHandlers = {
         range = self._createRange( nodeAfterSplit, 0 );
         self.setSelection( range );
         self._updatePath( range, true );
+        // preventDefault prevents the natural browser behavior of scrolling to
+        // the target of the event if it is not visible we want to avoid
+        // preventing this if they are adding newlines to the bottom of the
+        // document
+        if (nodeAfterSplit !== nodeAfterSplit.parentElement.lastChild) {
+          event.preventDefault();
+        }
     },
     backspace: function ( self, event, range ) {
         var root = self._root;
