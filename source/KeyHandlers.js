@@ -147,6 +147,9 @@ var keyHandlers = {
         var root = self._root;
         var block, parent, nodeAfterSplit;
 
+        // We handle this ourselves
+        event.preventDefault()
+
         // Save undo checkpoint and add any links in the preceding section.
         // Remove any zws so we don't think there's content in an empty
         // block.
