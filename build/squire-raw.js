@@ -1373,9 +1373,6 @@ var keyHandlers = {
         var root = self._root;
         var block, parent, nodeAfterSplit;
 
-        // We handle this ourselves
-        event.preventDefault();
-
         // Save undo checkpoint and add any links in the preceding section.
         // Remove any zws so we don't think there's content in an empty
         // block.
@@ -1468,6 +1465,13 @@ var keyHandlers = {
         range = self._createRange( nodeAfterSplit, 0 );
         self.setSelection( range );
         self._updatePath( range, true );
+
+        // HACK: MT, Not sure why but we need to wait a tick for
+        // scrollIntoViewIfNeeded to work properly otherwise it gets
+        // half cutoff when you add newlines
+        setTimeout(function() {
+          nodeAfterSplit.scrollIntoViewIfNeeded();
+        });
     },
     backspace: function ( self, event, range ) {
         var root = self._root;
