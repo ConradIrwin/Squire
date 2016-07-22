@@ -1432,6 +1432,13 @@ var keyHandlers = {
         range = self._createRange( nodeAfterSplit, 0 );
         self.setSelection( range );
         self._updatePath( range, true );
+
+        // HACK: MT, Not sure why but we need to wait a tick for
+        // scrollIntoViewIfNeeded to work properly otherwise it gets
+        // half cutoff when you add newlines
+        setTimeout(function() {
+          nodeAfterSplit.scrollIntoViewIfNeeded();
+        });
     },
     backspace: function ( self, event, range ) {
         var root = self._root;
