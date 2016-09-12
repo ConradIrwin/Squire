@@ -1,9 +1,6 @@
 /*jshint ignore:start */
 
-Squire.addLinks = addLinks;
-Squire.splitBlock = splitBlock;
-Squire.startSelectionId = startSelectionId;
-Squire.endSelectionId = endSelectionId;
+// Range.js exports
 Squire.getNodeBefore = getNodeBefore;
 Squire.getNodeAfter = getNodeAfter;
 Squire.insertNodeInRange = insertNodeInRange;
@@ -20,4 +17,11 @@ Squire.rangeDoesStartAtBlockBoundary = rangeDoesStartAtBlockBoundary;
 Squire.rangeDoesEndAtBlockBoundary = rangeDoesEndAtBlockBoundary;
 Squire.expandRangeToBlockBoundaries = expandRangeToBlockBoundaries;
 
+// Clipboard.js exports
 Squire.onPaste = onPaste;
+
+// Editor.js exports
+Squire.addLinks = addLinks;
+Squire.splitBlock = splitBlock;
+Squire.startSelectionId = startSelectionId;
+Squire.endSelectionId = endSelectionId;
