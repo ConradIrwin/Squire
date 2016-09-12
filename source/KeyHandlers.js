@@ -247,7 +247,7 @@ var keyHandlers = {
         // scrollIntoViewIfNeeded to work properly otherwise it gets
         // half cutoff when you add newlines
         setTimeout(function() {
-          nodeAfterSplit.scrollIntoViewIfNeeded();
+          nodeAfterSplit && nodeAfterSplit.scrollIntoViewIfNeeded();
         });
     },
     backspace: function ( self, event, range ) {
