@@ -44,7 +44,6 @@ function Squire ( root, config ) {
     this._doc = doc;
     this._root = root;
 
-    this.handleEvent = this.handleEvent.bind(this);
     this._events = {};
 
     this._isFocused = false;
