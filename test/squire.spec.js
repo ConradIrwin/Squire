@@ -272,6 +272,17 @@ describe('Squire RTE', function () {
         });
     });
 
+    it('does not error on merging blocks', function () {
+      var startHTML = '<div><span><div>Hi Person,<br></div><div><br></div><div>beep<br></div><div><br></div><div>boop<br></div><div><br></div><div>bop<br></div><ul><li><div>boing<br></div></li><li><div>bork<br></div></li><li><div>woop<br></div></li><li><div>wop<br></div></li></ul><div>wing wang<br></div><div><br></div><div id="foo">Thanks!<br></div><div>Gremlin<br></div></span><br></div>';
+      editor.setHTML(startHTML);
+
+      var range = doc.createRange();
+      range.setStart(doc.body.querySelector('#foo').childNodes.item(0), 0);
+      range.setEnd(doc.body.childNodes.item(0), 1);
+      editor.setSelection(range);
+      editor._keyHandlers.backspace(editor, {preventDefault: function(){}}, editor.getSelection());
+    });
+
     afterEach(function () {
         editor = null;
         var iframe = document.getElementById('testFrame');
